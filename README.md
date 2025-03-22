@@ -28,6 +28,8 @@ The solution approach can be summarized as follows:
 ## License
 This project is licensed under the [MIT License](LICENSE).
 
+🌐 **Live Demo:** [SankatMitra Streamlit App](https://sankatmitra-dvdwqhbokx9nkhsfvn4rll.streamlit.app/)
+
 ## Acknowledgments
 We would like to acknowledge the contributions of the open-source community and the support of our partners and collaborators in developing and testing this disaster relief and response solution. Thank you for your support!
 
