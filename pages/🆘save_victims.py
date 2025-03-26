@@ -84,25 +84,45 @@ def main():
                     person += 1
                 elif detection['class'] == 'animal':
                     animal+=1
-          draw_bounding_box(image, victim_predictions)
-          st.image(image, caption='Processed Image', use_column_width=True)
-          st.divider()
-          st.write(f"**Persons detected: {person}**")
-          st.write(f"**Animals detected: {animal}**")
-          st.divider()
+         draw_bounding_box(image, victim_predictions)
+         st.image(image, caption='Processed Image', use_column_width=True)
+         st.divider()
+         st.write(f"**Persons detected: {person}**")
+         st.write(f"**Animals detected: {animal}**")
+         st.divider()
          if level_predictions:
-          for entity in level_predictions:
-            # st.write(entity['class'])
-            if entity['class'] == 'flood':
-               st.subheader("**Flood is detected**")
-            elif entity['class'] in higherClass:
-               st.subheader(f"High level of Flood Detected: :red[{entity['class']}]")
-            else:
-               st.subheader(f"Low Flood levels detected: :green[{entity['class']}]")
-            
-     else:
+            flood_detected = False
+            highest_level = None
+
+            for entity in level_predictions:
+                class_name = entity['class']
+
+                if class_name == 'flood':
+                    flood_detected = True
+
+                elif class_name.startswith('level'):
+                    try:
+                        level_num = int(class_name.split()[-1])
+
+                        if highest_level is None or level_num > highest_level:
+                            highest_level = level_num
+
+                    except ValueError:
+                        pass  # Ignore unparseable class names
+
+            if flood_detected:
+                st.subheader("Flood is detected")
+
+            if highest_level is not None:
+                if highest_level >= 5:
+                    st.subheader(f"High level of Flood Detected: :red[level {highest_level}]")
+                else:
+                    st.subheader(f"Low Flood levels detected: :green[level {highest_level}]")
+
+  else:
         st.error("Add Valid Roboflow API Key")
 
 if __name__ == "__main__":
     main()
+
 

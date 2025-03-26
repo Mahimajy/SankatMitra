@@ -3,6 +3,7 @@ import base64
 import supervision as sv
 from inference_sdk import InferenceHTTPClient
 from PIL import Image, ImageDraw, ImageOps
+import streamlit as st
 
 
 st.set_page_config(page_title="SankatMitra", page_icon="🤝",initial_sidebar_state='expanded')
