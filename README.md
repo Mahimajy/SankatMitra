@@ -31,5 +31,8 @@ This project is licensed under the [MIT License](LICENSE).
 ## Acknowledgments
 We would like to acknowledge the contributions of the open-source community and the support of our partners and collaborators in developing and testing this disaster relief and response solution. Thank you for your support!
 
-🌐 **Live Demo:** [SankatMitra Streamlit App](https://sankatmitra-dvdwqhbokx9nkhsfvn4rll.streamlit.app/)
+## Links
+🌐 **Live MVP**: [SankatMitra Streamlit App](https://sankatmitra-dvdwqhbokx9nkhsfvn4rll.streamlit.app/)
+🎥 **Demo Video**: [![Watch the Demo](https://img.youtube.com/vi/2JKwvcqAauI/0.jpg)](https://www.youtube.com/watch?v=2JKwvcqAauI)
+
 ---
